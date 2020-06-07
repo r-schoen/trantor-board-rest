@@ -1,0 +1,2 @@
+rootProject.name = 'trantor-board-rest'
+include 'trest-api', 'trest-war'

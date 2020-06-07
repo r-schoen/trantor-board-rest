@@ -1,0 +1,20 @@
+plugins {
+    id 'application'
+    id 'war'
+}
+
+dependencies {
+	// idk what this is for
+    implementation 'com.google.guava:guava:27.1-jre'
+    
+    compile project(":trest-api")
+
+	// Test
+    testImplementation 'org.codehaus.groovy:groovy-all:2.5.6'
+    testImplementation 'org.spockframework:spock-core:1.2-groovy-2.5'
+    testImplementation 'junit:junit:4.12'
+}
+
+application {
+    mainClassName = 'net.trantor.rest.war.App'
+}
