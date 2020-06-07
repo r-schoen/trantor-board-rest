@@ -4,6 +4,7 @@ ext {
 }
 
 allprojects {
+	apply plugin: 'eclipse'
 	repositories {
 		jcenter()
 		mavenCentral()
@@ -17,5 +18,14 @@ subprojects {
 	apply plugin: 'maven'
 	
 	dependencies {
+		compile group: 'org.springframework', name: 'spring-context', version: '3.1.0.RELEASE'
+		compile group: 'org.springframework', name: 'spring-web', version: '3.1.0.RELEASE'
+		compile group: 'javax.ws.rs', name: 'javax.ws.rs-api', version: '2.1-m01'
+		compile group: 'org.apache.cxf', name: 'cxf-bundle', version: '3.0.0-milestone1'
+		compile group: 'org.apache.cxf', name: 'cxf-rt-frontend-jaxrs', version: '2.7.0'
+		
+		compile "org.codehaus.groovy:groovy-all:2.5.8"
+		testCompile platform("org.spockframework:spock-bom:2.0-M1-groovy-2.5")
+		testCompile "org.spockframework:spock-core"
 	}
 }
