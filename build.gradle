@@ -1,4 +1,7 @@
-
+ext {
+	cxfVersion = '3.2.0'
+	jacksonVersion = '2.10.0'
+}
 
 allprojects {
 	repositories {
@@ -12,4 +15,7 @@ subprojects {
 	apply plugin: 'java'
 	apply plugin: 'groovy'
 	apply plugin: 'maven'
+	
+	dependencies {
+	}
 }

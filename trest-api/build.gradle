@@ -1,14 +1,19 @@
 plugins {
-    id 'java-library'
+	id 'eclipse'
+	id 'war'
+	id 'idea'
+	id 'groovy'
 }
 
-dependencies {
-    api 'org.apache.commons:commons-math3:3.6.1'
-
-    implementation 'com.google.guava:guava:27.1-jre'
-
-	// Test stuff 
-    testImplementation 'org.codehaus.groovy:groovy-all:2.5.6'
-    testImplementation 'org.spockframework:spock-core:1.2-groovy-2.5'
-    testImplementation 'junit:junit:4.12'
+dependencies { 
+	// TODO: separate some of these out to the root project 
+	compile group: 'org.springframework', name: 'spring-context', version: '3.1.0.RELEASE'
+	compile group: 'org.springframework', name: 'spring-web', version: '3.1.0.RELEASE'
+	compile group: 'javax.ws.rs', name: 'javax.ws.rs-api', version: '2.1-m01'
+	compile group: 'org.apache.cxf', name: 'cxf-bundle', version: '3.0.0-milestone1'
+	compile group: 'org.apache.cxf', name: 'cxf-rt-frontend-jaxrs', version: '2.7.0'
+	
+	compile "org.codehaus.groovy:groovy-all:2.5.8"
+	testCompile platform("org.spockframework:spock-bom:2.0-M1-groovy-2.5")
+	testCompile "org.spockframework:spock-core"
 }
